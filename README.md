@@ -6,6 +6,9 @@
  # Short Overview
  `check_lostfound.py` relies heavily on `make-lsLR.sh` and its generated files in order to be able to recover files from lost+found directory. That is: you need to run `make-lsLR.sh` every day to be able to restore files when that will ever happen. Otherwise the `check_lostfound.py` won't be able to work at all. 
  
+ # Why a shell script and text files?
+ Well, the reason is simple: in case of emergency all you need are the text files. So if your filesystem is nearly completely in `/lost+found` you can still recover files by grepping the text files and move/rename the files into place by using a rescue system or Live CD. When the information would be stored in a SQLite database or such, it would be much more difficult to recover
+ 
  # Configuration
  Before using the script, have a look at the script! You'll need to adapt the script to exclude directories and change paths. It will *NOT* work out of the box for you! 
  
